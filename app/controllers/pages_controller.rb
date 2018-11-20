@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     sender_number = params["From"]
     incoming_message = params["Body"]
     message = "I AM A ROBOT"
-    
+
     @new_message = Message.new
     @new_message.from_number = params["From"]
     @new_message.message_body = params["Body"]
@@ -26,7 +26,11 @@ class PagesController < ApplicationController
     #   message = "NORMALITY"
     # end
     case incoming_message
+    when "Mitch"
+      if sender_number "3093715741"
+      message = "This is a magical message sent from the Twilio API: To rid yourself of sickness, do a handstand for 30 minutes, while watching Hallmark movies."
     when "Secret"
+
       message = "You've unlocked a secret"
     when "PizzaTime"
       message = "Spiderman 2"
