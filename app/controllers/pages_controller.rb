@@ -4,13 +4,13 @@ class PagesController < ApplicationController
   end
 
   def incoming_sms
-    tiwlio_sid = ENV['TWILIO_SID']
-    tiwlio_token = ENV['TWILIO_TOKEN']
-    tiwlio_phone_number = ENV['TWILIO_PHONE_NUMBER']
+    twilio_sid = ENV['TWILIO_SID']
+    twilio_token = ENV['TWILIO_TOKEN']
+    twilio_phone_number = ENV['TWILIO_PHONE_NUMBER']
 
     @client = Twilio::REST::Client.new(twilio_sid, twilio_token)
     @client.message.creat(
-      :from => tiwlio_phone_number,
+      :from => twilio_phone_number,
       :to => sender_number,
       :body => message
       )
