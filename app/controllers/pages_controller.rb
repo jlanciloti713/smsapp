@@ -11,6 +11,14 @@ class PagesController < ApplicationController
     sender_number = params["From"]
     incoming_message = params["Body"]
     message = "I AM A ROBOT"
+    
+    @new_message = Message.new
+    @new_message.from_number = params["From"]
+    @new_message.message_body = params["Body"]
+    @new_message.from_city = params["FromCity"]
+    @new_message.save
+
+
 
     # if incoming_message == "Secret"
     #   message = "You've unlocked a secret."
