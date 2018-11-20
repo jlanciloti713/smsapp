@@ -1,6 +1,6 @@
 <h1>This is our index page</h1>
 
-<% @message.each do |message| %>
+<% @messages.each do |message| %>
 
 <p><%= "#{message.from_number} texted us and said: #{message.message_body}" %></p>
 
