@@ -27,7 +27,7 @@ class PagesController < ApplicationController
     # end
     case incoming_message
     when "Mitch"
-      sender_number "3093715741"
+      sender_number = "3093715741"
       message = "This is a magical message sent from the Twilio API: To rid yourself of sickness, do a handstand for 30 minutes, while watching Hallmark movies."
     when "Secret"
 
